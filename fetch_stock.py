@@ -61,9 +61,9 @@ def get_latest_date_in_csv() -> str | None:
 
 def fetch_and_append():
     try:
-        from vnstock import Vnstock
+        import yfinance as yf
     except Exception as e:
-        log.error(f"Lỗi import vnstock: {type(e).__name__}: {e}")
+        log.error(f"Lỗi import yfinance: {type(e).__name__}: {e}")
         sys.exit(1)
 
     today = date.today()
@@ -101,14 +101,22 @@ def fetch_and_append():
 
         for ticker in TICKERS:
             try:
-                stock = Vnstock().stock(symbol=ticker, source=SOURCE)
-                df = stock.quote.history(start=start_str, end=end_str, interval="1D")
+                # yfinance: end là exclusive nên +1 ngày; mã VN cần hậu tố .VN
+                end_excl = (yesterday + timedelta(days=1)).strftime("%Y-%m-%d")
+                df = yf.Ticker(f"{ticker}.VN").history(
+                    start=start_str, end=end_excl, interval="1d", auto_adjust=False
+                )
 
                 if df is None or df.empty:
                     log.warning(f"{ticker}: Không có data ({start_str} → {end_str})")
                     continue
 
+                # Đưa về format giống vnstock: cột chữ thường, giá đơn vị nghìn VND
+                df = df.reset_index().rename(columns=str.lower).rename(columns={"date": "time"})
+                for col in ["open", "high", "low", "close"]:
+                    df[col] = (df[col] / 1000).round(2)
                 df["time"] = df["time"].astype(str).str[:10]
+                
                 df_filtered = df[
                     (df["time"] >= start_str) & (df["time"] <= end_str)
                 ]
