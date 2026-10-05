@@ -60,7 +60,7 @@ Phân loại thành 3 nhóm:
 ### Bước 3 — Tạo HTML report 1 trang
 
 Dùng **html-report skill** và **story-builder agent** để tạo report tại:
-`data/reports/stock_report_{YYYY-MM-DD}.html`
+`reports/stock_report_{YYYY-MM-DD}.html` (đúng thư mục này — workflow `daily_email.yml` chỉ tìm report ở đây)
 
 **Report cần có:**
 - Tiêu đề: "VN Stock Daily Briefing — {ngày hôm nay}"
@@ -89,12 +89,14 @@ Sử dụng các agent sau từ folder đó:
 
 ```
 github_actions/
-└── data/
-    ├── stock_data.csv          ← input (do GitHub Actions fetch)
-    ├── pipeline/
-    │   └── stock_metrics.json  ← intermediate
-    └── reports/
-        └── stock_report_YYYY-MM-DD.html  ← output cuối
+├── data/
+│   ├── stock_data.csv          ← input (do GitHub Actions fetch)
+│   └── pipeline/
+│       └── stock_metrics.json  ← intermediate
+├── logs/
+│   └── last_analyzed.txt       ← ngày data đã phân tích
+└── reports/
+    └── stock_report_YYYY-MM-DD.html  ← output cuối
 ```
 
 ---
