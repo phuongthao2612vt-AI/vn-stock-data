@@ -10,3 +10,47 @@
 2026-10-03 04:23:19,019 [INFO] MSN: ✓ 65 dòng
 2026-10-03 04:23:19,135 [INFO] BID: ✓ 65 dòng
 2026-10-03 04:23:19,135 [INFO] === Xong: 10/10 tickers | 650 dòng mới ===
+2026-10-08 14:54:51,025 [ERROR] Lỗi import yfinance: ModuleNotFoundError: No module named 'yfinance'
+2026-10-08 14:56:01,634 [INFO] Fetch từ 2026-10-03 → 2026-10-07
+2026-10-08 14:56:02,009 [WARNING] Cookie fetch from fc.yahoo.com failed (ConnectionError), continuing without it
+2026-10-08 14:56:02,404 [WARNING] Cookie/crumb fetch failed (ConnectionError), continuing without crumb
+2026-10-08 14:56:02,754 [ERROR] Failed to get ticker 'VCB.VN' reason: Failed to perform, curl: (7) CONNECT tunnel failed, response 403. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-10-08 14:56:03,057 [WARNING] Cookie/crumb fetch failed (ConnectionError), continuing without crumb
+2026-10-08 14:56:03,333 [ERROR] VCB: Lỗi — Failed to perform, curl: (7) CONNECT tunnel failed, response 403. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-10-08 14:56:03,574 [WARNING] Cookie/crumb fetch failed (ConnectionError), continuing without crumb
+2026-10-08 14:56:03,850 [ERROR] Failed to get ticker 'VIC.VN' reason: Failed to perform, curl: (7) CONNECT tunnel failed, response 403. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-10-08 14:56:04,144 [WARNING] Cookie/crumb fetch failed (ConnectionError), continuing without crumb
+2026-10-08 14:56:04,436 [ERROR] VIC: Lỗi — Failed to perform, curl: (7) CONNECT tunnel failed, response 403. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-10-08 14:56:04,744 [WARNING] Cookie/crumb fetch failed (ConnectionError), continuing without crumb
+2026-10-08 14:56:05,056 [ERROR] Failed to get ticker 'VHM.VN' reason: Failed to perform, curl: (7) CONNECT tunnel failed, response 403. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-10-08 14:56:05,056 [ERROR] $VHM.VN: possibly delisted; no timezone found
+2026-10-08 14:56:05,057 [WARNING] VHM: Không có data (2026-10-03 → 2026-10-07)
+2026-10-08 14:56:05,332 [WARNING] Cookie/crumb fetch failed (ConnectionError), continuing without crumb
+2026-10-08 14:56:05,652 [ERROR] Failed to get ticker 'HPG.VN' reason: Failed to perform, curl: (7) CONNECT tunnel failed, response 403. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-10-08 14:56:05,652 [ERROR] $HPG.VN: possibly delisted; no timezone found
+2026-10-08 14:56:05,653 [WARNING] HPG: Không có data (2026-10-03 → 2026-10-07)
+2026-10-08 14:56:05,910 [WARNING] Cookie/crumb fetch failed (ConnectionError), continuing without crumb
+2026-10-08 14:56:06,239 [ERROR] Failed to get ticker 'TCB.VN' reason: Failed to perform, curl: (7) CONNECT tunnel failed, response 403. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-10-08 14:56:06,239 [ERROR] $TCB.VN: possibly delisted; no timezone found
+2026-10-08 14:56:06,240 [WARNING] TCB: Không có data (2026-10-03 → 2026-10-07)
+2026-10-08 14:56:06,610 [WARNING] Cookie/crumb fetch failed (ConnectionError), continuing without crumb
+2026-10-08 14:56:06,955 [ERROR] Failed to get ticker 'MBB.VN' reason: Failed to perform, curl: (7) CONNECT tunnel failed, response 403. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-10-08 14:56:06,955 [ERROR] $MBB.VN: possibly delisted; no timezone found
+2026-10-08 14:56:06,956 [WARNING] MBB: Không có data (2026-10-03 → 2026-10-07)
+2026-10-08 14:56:07,339 [WARNING] Cookie/crumb fetch failed (ConnectionError), continuing without crumb
+2026-10-08 14:56:07,672 [ERROR] Failed to get ticker 'VNM.VN' reason: Failed to perform, curl: (7) CONNECT tunnel failed, response 403. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-10-08 14:56:07,673 [ERROR] $VNM.VN: possibly delisted; no timezone found
+2026-10-08 14:56:07,673 [WARNING] VNM: Không có data (2026-10-03 → 2026-10-07)
+2026-10-08 14:56:07,926 [WARNING] Cookie/crumb fetch failed (ConnectionError), continuing without crumb
+2026-10-08 14:56:08,271 [ERROR] Failed to get ticker 'FPT.VN' reason: Failed to perform, curl: (7) CONNECT tunnel failed, response 403. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-10-08 14:56:08,272 [ERROR] $FPT.VN: possibly delisted; no timezone found
+2026-10-08 14:56:08,272 [WARNING] FPT: Không có data (2026-10-03 → 2026-10-07)
+2026-10-08 14:56:08,584 [WARNING] Cookie/crumb fetch failed (ConnectionError), continuing without crumb
+2026-10-08 14:56:08,843 [ERROR] Failed to get ticker 'MSN.VN' reason: Failed to perform, curl: (7) CONNECT tunnel failed, response 403. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-10-08 14:56:08,843 [ERROR] $MSN.VN: possibly delisted; no timezone found
+2026-10-08 14:56:08,844 [WARNING] MSN: Không có data (2026-10-03 → 2026-10-07)
+2026-10-08 14:56:08,983 [WARNING] Cookie/crumb fetch failed (ConnectionError), continuing without crumb
+2026-10-08 14:56:09,297 [ERROR] Failed to get ticker 'BID.VN' reason: Failed to perform, curl: (7) CONNECT tunnel failed, response 403. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-10-08 14:56:09,298 [ERROR] $BID.VN: possibly delisted; no timezone found
+2026-10-08 14:56:09,299 [WARNING] BID: Không có data (2026-10-03 → 2026-10-07)
+2026-10-08 14:56:09,299 [INFO] === Xong: 0/10 tickers | 0 dòng mới ===
