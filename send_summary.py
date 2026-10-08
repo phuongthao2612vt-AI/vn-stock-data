@@ -165,7 +165,7 @@ def get_latest_report() -> Path | None:
     reports_dir = Path("data/reports")
     if not reports_dir.exists():
         return None
-    cutoff = date.today() - timedelta(days=3)
+    cutoff = date.today() - timedelta(days=7)
     candidates = []
     for f in reports_dir.glob("*.html"):
         # Lấy ngày từ tên file (pattern: *YYYY-MM-DD*.html)
