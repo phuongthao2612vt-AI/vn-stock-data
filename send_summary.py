@@ -161,8 +161,8 @@ def send_email(html_body):
 # ─── MAIN ────────────────────────────────────────────────────────────────────
 
 def get_latest_report() -> Path | None:
-    """Tìm report HTML mới nhất trong vòng 3 ngày gần nhất."""
-    reports_dir = Path("data/reports")
+    """Tìm report HTML mới nhất trong vòng 7 ngày gần nhất."""
+    reports_dir = Path("reports")
     if not reports_dir.exists():
         return None
     cutoff = date.today() - timedelta(days=7)
@@ -190,10 +190,10 @@ if __name__ == "__main__":
         print("Không tìm thấy stock_data.csv. Bỏ qua gửi email.")
         sys.exit(0)
 
-    # Check 2: có report trong 3 ngày gần nhất không
+    # Check 2: có report trong 7 ngày gần nhất không
     latest_report = get_latest_report()
     if latest_report is None:
-        print("Không tìm thấy report HTML trong 3 ngày gần nhất. Bỏ qua gửi email.")
+        print("Không tìm thấy report HTML trong 7 ngày gần nhất. Bỏ qua gửi email.")
         sys.exit(0)
     print(f"Dùng report: {latest_report.name}")
 
