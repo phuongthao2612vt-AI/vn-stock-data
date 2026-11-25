@@ -463,3 +463,25 @@
 2026-11-24 20:58:15,038 [INFO] MSN: ✓ 1 dòng
 2026-11-24 20:58:15,144 [INFO] BID: ✓ 1 dòng
 2026-11-24 20:58:15,144 [INFO] === Xong: 10/10 tickers | 10 dòng mới ===
+2026-11-25 20:20:25,807 [INFO] Fetch từ 2026-11-24 → 2026-11-24
+2026-11-25 20:20:26,058 [ERROR] $VCB.VN: possibly delisted; no price data found  (1d 2026-11-24 -> 2026-11-25)
+2026-11-25 20:20:26,059 [WARNING] VCB: Không có data (2026-11-24 → 2026-11-24)
+2026-11-25 20:20:26,171 [ERROR] $VIC.VN: possibly delisted; no price data found  (1d 2026-11-24 -> 2026-11-25)
+2026-11-25 20:20:26,172 [WARNING] VIC: Không có data (2026-11-24 → 2026-11-24)
+2026-11-25 20:20:26,262 [ERROR] $VHM.VN: possibly delisted; no price data found  (1d 2026-11-24 -> 2026-11-25)
+2026-11-25 20:20:26,262 [WARNING] VHM: Không có data (2026-11-24 → 2026-11-24)
+2026-11-25 20:20:26,369 [ERROR] $HPG.VN: possibly delisted; no price data found  (1d 2026-11-24 -> 2026-11-25)
+2026-11-25 20:20:26,370 [WARNING] HPG: Không có data (2026-11-24 → 2026-11-24)
+2026-11-25 20:20:26,453 [ERROR] $TCB.VN: possibly delisted; no price data found  (1d 2026-11-24 -> 2026-11-25)
+2026-11-25 20:20:26,453 [WARNING] TCB: Không có data (2026-11-24 → 2026-11-24)
+2026-11-25 20:20:26,553 [ERROR] $MBB.VN: possibly delisted; no price data found  (1d 2026-11-24 -> 2026-11-25)
+2026-11-25 20:20:26,554 [WARNING] MBB: Không có data (2026-11-24 → 2026-11-24)
+2026-11-25 20:20:26,654 [ERROR] $VNM.VN: possibly delisted; no price data found  (1d 2026-11-24 -> 2026-11-25)
+2026-11-25 20:20:26,655 [WARNING] VNM: Không có data (2026-11-24 → 2026-11-24)
+2026-11-25 20:20:26,753 [ERROR] $FPT.VN: possibly delisted; no price data found  (1d 2026-11-24 -> 2026-11-25)
+2026-11-25 20:20:26,753 [WARNING] FPT: Không có data (2026-11-24 → 2026-11-24)
+2026-11-25 20:20:26,842 [ERROR] $MSN.VN: possibly delisted; no price data found  (1d 2026-11-24 -> 2026-11-25)
+2026-11-25 20:20:26,843 [WARNING] MSN: Không có data (2026-11-24 → 2026-11-24)
+2026-11-25 20:20:26,941 [ERROR] $BID.VN: possibly delisted; no price data found  (1d 2026-11-24 -> 2026-11-25)
+2026-11-25 20:20:26,941 [WARNING] BID: Không có data (2026-11-24 → 2026-11-24)
+2026-11-25 20:20:26,941 [INFO] === Xong: 0/10 tickers | 0 dòng mới ===
