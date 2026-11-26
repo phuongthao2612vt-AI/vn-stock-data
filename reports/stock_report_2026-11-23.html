@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VN Stock Daily Briefing</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1a3a52;
+            margin-bottom: 5px;
+            font-size: 28px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        .summary-table th {
+            background: #1a3a52;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .summary-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #eee;
+        }
+        .summary-table tr:hover {
+            background: #f9f9f9;
+        }
+        .positive { color: #2ecc71; font-weight: 600; }
+        .negative { color: #e74c3c; font-weight: 600; }
+        .neutral { color: #95a5a6; }
+        .up { background: #2ecc71; color: white; padding: 2px 6px; border-radius: 3px; font-size: 12px; }
+        .down { background: #e74c3c; color: white; padding: 2px 6px; border-radius: 3px; font-size: 12px; }
+        .sideway { background: #95a5a6; color: white; padding: 2px 6px; border-radius: 3px; font-size: 12px; }
+        .rec-cell { padding: 8px 10px !important; text-align: center; font-weight: 600; }
+        .chart-container {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 6px;
+        }
+        .top-picks {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f0f8ff;
+            border-left: 4px solid #1a3a52;
+            border-radius: 4px;
+        }
+        .top-picks h3 {
+            color: #1a3a52;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .pick-item {
+            margin-bottom: 12px;
+            padding: 10px;
+            background: white;
+            border-radius: 4px;
+            border-left: 3px solid #2ecc71;
+        }
+        .pick-title {
+            font-weight: 600;
+            color: #1a3a52;
+            margin-bottom: 5px;
+        }
+        .pick-reason {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.4;
+        }
+        .footer {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            font-size: 12px;
+            color: #999;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 VN Stock Daily Briefing</h1>
+        <div class="subtitle">Data as of 23/11/2026 | Report generated 26/11/2026</div>
+        
+        <table class="summary-table">
+            <thead>
+                <tr>
+                    <th>Mã</th>
+                    <th>Return 30D</th>
+                    <th>Volatility</th>
+                    <th>Trend</th>
+                    <th>Vol Trend</th>
+                    <th>Giá hiện tại</th>
+                    <th>Khuyến nghị</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>VIC</strong></td>
+                    <td class="positive">+3.67%</td>
+                    <td>2.26%</td>
+                    <td><span class='up'>Up</span></td>
+                    <td class="positive">-17.22%</td>
+                    <td>245.70đ</td>
+                    <td class="rec-cell">✅ Nên xem xét</td>
+                </tr>
+                <tr>
+                    <td><strong>HPG</strong></td>
+                    <td class="negative">-2.39%</td>
+                    <td>1.57%</td>
+                    <td><span class='sideway'>Sideway</span></td>
+                    <td class="positive">-25.86%</td>
+                    <td>20.40đ</td>
+                    <td class="rec-cell">✅ Nên xem xét</td>
+                </tr>
+                <tr>
+                    <td><strong>VHM</strong></td>
+                    <td class="negative">-3.76%</td>
+                    <td>2.43%</td>
+                    <td><span class='down'>Down</span></td>
+                    <td class="positive">-25.37%</td>
+                    <td>61.50đ</td>
+                    <td class="rec-cell">✅ Nên xem xét</td>
+                </tr>
+                <tr>
+                    <td><strong>MSN</strong></td>
+                    <td class="negative">-5.34%</td>
+                    <td>1.57%</td>
+                    <td><span class='down'>Down</span></td>
+                    <td class="positive">-27.40%</td>
+                    <td>69.10đ</td>
+                    <td class="rec-cell">⚠️ Theo dõi</td>
+                </tr>
+                <tr>
+                    <td><strong>MBB</strong></td>
+                    <td class="negative">-7.42%</td>
+                    <td>1.55%</td>
+                    <td><span class='down'>Down</span></td>
+                    <td class="positive">-6.77%</td>
+                    <td>18.10đ</td>
+                    <td class="rec-cell">⚠️ Theo dõi</td>
+                </tr>
+                <tr>
+                    <td><strong>VNM</strong></td>
+                    <td class="negative">-9.20%</td>
+                    <td>1.48%</td>
+                    <td><span class='down'>Down</span></td>
+                    <td class="positive">-3.41%</td>
+                    <td>52.30đ</td>
+                    <td class="rec-cell">⚠️ Theo dõi</td>
+                </tr>
+                <tr>
+                    <td><strong>BID</strong></td>
+                    <td class="negative">-10.81%</td>
+                    <td>1.45%</td>
+                    <td><span class='down'>Down</span></td>
+                    <td class="positive">-8.47%</td>
+                    <td>30.10đ</td>
+                    <td class="rec-cell">⚠️ Theo dõi</td>
+                </tr>
+                <tr>
+                    <td><strong>VCB</strong></td>
+                    <td class="negative">-10.34%</td>
+                    <td>1.37%</td>
+                    <td><span class='down'>Down</span></td>
+                    <td class="positive">-7.86%</td>
+                    <td>50.30đ</td>
+                    <td class="rec-cell">❌ Tránh / Chờ</td>
+                </tr>
+                <tr>
+                    <td><strong>FPT</strong></td>
+                    <td class="negative">-16.34%</td>
+                    <td>1.97%</td>
+                    <td><span class='down'>Down</span></td>
+                    <td class="negative">+23.36%</td>
+                    <td>46.85đ</td>
+                    <td class="rec-cell">❌ Tránh / Chờ</td>
+                </tr>
+                <tr>
+                    <td><strong>TCB</strong></td>
+                    <td class="negative">-38.61%</td>
+                    <td>3.79%</td>
+                    <td><span class='down'>Down</span></td>
+                    <td class="positive">-27.88%</td>
+                    <td>20.75đ</td>
+                    <td class="rec-cell">❌ Tránh / Chờ</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="top-picks">
+            <h3>🎯 Top Picks Hôm Nay</h3>
+            <div class="pick-item">
+                <div class="pick-title">1. VIC (+3.67%)</div>
+                <div class="pick-reason">Là mã duy nhất với return dương (+3.67%) trong 30 ngày. Trend tăng và có tín hiệu mua mạnh. Nên theo dõi mục tiêu giá.</div>
+            </div>
+            <div class="pick-item">
+                <div class="pick-title">2. HPG (-2.39%)</div>
+                <div class="pick-reason">Mặc dù return âm nhẹ (-2.39%), nhưng trend ổn định (sideway) với volatility thấp. Thích hợp cho nhà đầu tư bảo thủ.</div>
+            </div>
+            <div class="pick-item">
+                <div class="pick-title">3. VHM (-3.76%)</div>
+                <div class="pick-reason">Giảm -3.76% nhưng vẫn ở mức chấp nhận được. Volatility tương đối cao nhưng volume trend yếu, cần chờ tín hiệu mua.</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Báo cáo này chỉ mang tính tham khảo. Hãy thực hiện nghiên cứu riêng trước khi quyết định đầu tư.</p>
+        </div>
+    </div>
+</body>
+</html>
